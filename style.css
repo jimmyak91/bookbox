@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Open+Sans&display=swap');
+
+:root {
+    --colour-riflegreen: #4E5340;
+    --colour-nickel: #697268;
+    --colour-cadetgrey: #95A3A4;
+    --colour-columbiablue: #B7D1DA;
+    --colour-alabaster: #E2E8DD;
+    --colour-primarywhite: #ffffff;
+    --colour-offwhite: hsl(255, 50%, 98%);
+
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+ul,
+li,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--colour-offwhite);
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: var(--colour-nickel);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+.sidebar h1 {
+    color: var(--colour-primarywhite);
+    font-size: 60px;
+    margin: 20px;
+    font-family: 'Bitter', serif;
+}
+
+.sidebar li {
+    list-style: none;
+    color: var(--colour-primarywhite);
+    /* margin: 50px; */
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    margin-top: 50px;
+    -webkit-padding-start: 0;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: var(--colour-primarywhite);
+}
+
+.sidebar a:hover {
+    color: var(--colour-columbiablue);
+}
+
+
+.main {
+    margin-left: 300px;
+    height: 100%;
+    
+  }
+
+.library {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 300px;
+    height: 200px;
+    background-color: var(--colour-cadetgrey);
+    color: var(--colour-offwhite);
+    border-radius: 15px;
+    margin: 50px;
+    padding: 20px;
+}
+
+
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: 160px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .sidebar h1 {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        margin-top: 0px;
+    }
+
+    .sidebar li {
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+    div.main {margin-left: 0;}
+  }
