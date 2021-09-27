@@ -20,9 +20,9 @@
         <div class="sidebar">
             <h1>BookBox.</h1>
             <ul>
-                <li><a href=index.html>Home</a></li>
-                <li><a href="">Add Book</a></li>
-                <li><a href="">Settings...</a></li>
+                <li><a href="index.html" class="menu-items">Home</a></li>
+                <li><a href="#addBookModal" id="addBookBtn" class="menu-items">Add Book</a></li>
+                <li><a href="" class="menu-items">Settings...</a></li>
             </ul>
         </div>
         <div class="main">
@@ -32,6 +32,23 @@
             </div>
         </div>
         
+        <div id="addBookModal" class="modal">
+            <div class="formPopup" id="popupForm">
+                <form class="formContainer">
+                    <label for="name">Book Name</label>
+                    <input class="input" id="title" type="text" required/>
+                    <label for="author">Author</label>
+                    <input class="input" id="author" type="text" required />
+                    <label for="pages">Page Count</label>
+                    <input class="input" id="pages" type="text" required/>
+                    <label for="read">Read Status</label>
+                    <input type="checkbox" id="read" name="read" checked>
+                    <button class="btn" id="submitBtn">Submit</button>
+                    <button class="modal-close" id="cancelBtn">Cancel</button>
+                  </form>
+            </div>
+          </div>
+
         <script src="script.js" async defer></script>
     </body>
 </html>

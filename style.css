@@ -75,6 +75,11 @@ body {
 .sidebar a{
     text-decoration: none;
     color: var(--colour-primarywhite);
+    background-color: var(--colour-nickel);
+    box-shadow: none;
+    border: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
 }
 
 .sidebar a:hover {
@@ -103,6 +108,28 @@ body {
     padding: 20px;
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+
+      
+}
+/* Modal Content/Box */
+.formPopup {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
 
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -129,3 +156,46 @@ body {
     }
     div.main {margin-left: 0;}
   }
+
+
+
+
+/* --------------
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup form - hidden by default */
+  /* .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  } */
+  
+  /* Add styles to the form container */
+ .addBookPopup {
+     display: flex;
+     flex-direction: column;
+     /* background-color: var(--colour-primarywhite); */
+     width: 500px;
+     justify-content: center;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     border-radius: 15px;
+     padding: 30px;
+ }
