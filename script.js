@@ -1,17 +1,5 @@
-let myLibrary = [
-     {
-        title: 'Lord of the Rings: Fellowship of the Ring',
-        author: 'JRR Tolkien',
-        pageCount: 423,
-        read: true
-    },
-    {
-        title: 'Stalins Englishman',
-        author: 'Andrew Lownie',
-        pageCount: 500,
-        read: true
-    }
-];
+let myLibrary = [];
+
 const bookList = document.querySelector('.library');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
@@ -43,6 +31,7 @@ const addBook = () => {
     myLibrary.push(newBook);
     updateBooks();
     formReset();
+    saveLibraryToLocalStorage(myLibrary);
 }
 
 
@@ -87,6 +76,7 @@ const createBook = (item) => {
     removeBtn.addEventListener('click', () => {
         myLibrary.splice(myLibrary.indexOf(item), 1);
         updateBooks();
+        saveLibraryToLocalStorage(myLibrary);
      });
 
     readBtn.addEventListener('click', () => {
@@ -110,6 +100,11 @@ const formReset = () => {
     pagesInput.value = '';
     readInput.value = '';
 };
+
+const saveLibraryToLocalStorage = (item) => {
+  window.localStorage.setItem('library', JSON.stringify(item));
+}
+
 
 // removeBookBtn.forEach((book) => {
 //     removeBookBtn.addEventListener('click', deleteBook(book.getAttribute('itemArrayLocation')));
@@ -150,3 +145,8 @@ window.onclick = function(event) {
 }
 
 
+window.onload = function() {
+
+  myLibrary = JSON.parse(localStorage.library);
+  updateBooks();
+}
