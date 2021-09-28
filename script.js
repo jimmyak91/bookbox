@@ -47,6 +47,7 @@ const createBook = (item) => {
     const h3 = document.createElement('h3');
     const pAuthor = document.createElement('p');
     const pPages = document.createElement('p')
+    const btnDiv = document.createElement('div');
 
     div.className = "book";
     div.setAttribute("id", item.id);
@@ -54,21 +55,24 @@ const createBook = (item) => {
     bookList.appendChild(div);
   
     h3.innerText = item.title;
-    pAuthor.innerText = `Author: ${item.author}`;
-    pPages.innerText = `Total Pages: ${item.pages}`;
+    pAuthor.innerHTML = `<b>Author</b>: ${item.author}`;
+    pPages.innerHTML = `<b>Total Pages</b>: ${item.pages}`;
     pRead.innerText = `Read: ${item.read}`;
     removeBtn.textContent = 'Remove';
     removeBtn.setAttribute('id', 'removeBtn');
+    btnDiv.className = 'btnDiv';
   
     div.appendChild(h3);
     div.appendChild(pAuthor);
     div.appendChild(pPages);
-    div.appendChild(removeBtn);
+    div.appendChild(btnDiv);
+    btnDiv.appendChild(removeBtn);
 
     readBtn.classList.add('readBtn')
-    div.appendChild(readBtn);
+    btnDiv.appendChild(readBtn);
     if (item.read === false) {
         readBtn.textContent = 'Not Read';
+        readBtn.classList.add('notRead')
     } else {
         readBtn.textContent = 'Read';
     }
@@ -144,6 +148,20 @@ window.onclick = function(event) {
   }
 }
 
+
+// const github = document.querySelector('.github');
+// console.log(github);
+// github.addEventListener('onmouseover', () => {
+//   github.src = 'GitHub-Mark-32px.png';
+// })
+
+function hover(element) {
+  element.setAttribute('src', 'GitHub-Mark-32px.png');
+}
+
+function unhover(element) {
+  element.setAttribute('src', 'GitHub-Mark-Light-32px.png');
+}
 
 window.onload = function() {
 

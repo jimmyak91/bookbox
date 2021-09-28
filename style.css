@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 :root {
     --colour-riflegreen: #4E5340;
     --colour-nickel: #697268;
@@ -41,8 +41,8 @@ body {
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 300px;
-    background-color: var(--colour-nickel);
+    width: 220px;
+    background-color: var(--colour-riflegreen);
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -54,7 +54,7 @@ body {
 
 .sidebar h1 {
     color: var(--colour-primarywhite);
-    font-size: 60px;
+    font-size: 40px;
     margin: 20px;
     font-family: 'Bitter', serif;
 }
@@ -63,27 +63,39 @@ body {
     list-style: none;
     color: var(--colour-primarywhite);
     /* margin: 50px; */
-    margin-bottom: 50px;
-    font-size: 20px;
+    margin-bottom: 40px;
+    font-size: 16px;
 }
 
 .sidebar ul {
-    margin-top: 50px;
+    margin-top: 35px;
     -webkit-padding-start: 0;
 }
 
 .sidebar a{
     text-decoration: none;
     color: var(--colour-primarywhite);
-    background-color: var(--colour-nickel);
+    background-color: var(--colour-riflegreen);
     box-shadow: none;
     border: 0px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 25px;
+    font-size: 16px;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
 }
 
 .sidebar a:hover {
-    color: var(--colour-columbiablue);
+    color: black;
+}
+
+.sidebar img {
+  padding-left: 10px;
+}
+
+.sidebar img:hover {
+  src: "GitHub-Mark-32px.png";
 }
 
 
@@ -99,13 +111,83 @@ body {
 }
 
 .book {
-    width: 300px;
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    height: 180px;
     background-color: var(--colour-cadetgrey);
     color: var(--colour-offwhite);
     border-radius: 15px;
     margin: 50px;
     padding: 20px;
+    gap: 20px;
+    box-shadow: 1px 1px #778283,
+    2px 2px #778283;
+    -webkit-transition: background-color 1.5s ease-out;
+    -moz-transition: background-color 1.5s ease-out;
+    -o-transition: background-color 1.5s ease-out;
+    transition: background-color 1.5s ease-out;
+}
+
+.book:hover {
+  zoom: 102%;
+  background-color: var(--colour-nickel);
+  
+}
+
+#removeBtn {
+  
+  margin-right: 10px;
+  color: var(--colour-riflegreen);
+  border: 1px solid var(--colour-riflegreen);
+  background-color: inherit;
+  border-radius: 10px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+  width: 85px;
+  height: 40px;
+}
+
+#removeBtn:hover {
+  background-color: var(--colour-riflegreen);
+  color: var(--colour-primarywhite);
+}
+
+.readBtn {
+  background-color: var(--colour-riflegreen);
+  color: var(--colour-primarywhite);
+  border: 1px solid var(--colour-riflegreen);
+  /* background-color: inherit; */
+  border-radius: 10px;
+  width: 85px;
+  height: 40px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+
+}
+
+.readBtn:hover {
+  background-color: var(--colour-primarywhite);
+  color: var(--colour-riflegreen);
+}
+
+.readBtn.notRead {
+  background-color: inherit;
+  color: var(--colour-riflegreen);
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+
+.readBtn.notRead:hover {
+  background-color: var(--colour-riflegreen);
+  color: var(--colour-primarywhite);
 }
 
 .modal {
