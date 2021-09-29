@@ -27,7 +27,9 @@
             </ul>
         </div>
         <div class="main">
-            
+            <div class="no-books">
+                <h3>No Books Added</h3>
+              </div>
             <div class="library">
                 
             </div>
@@ -36,17 +38,28 @@
         <div id="addBookModal" class="modal">
             <div class="formPopup" id="popupForm">
                 <form class="formContainer">
-                    <label for="name">Book Name</label>
-                    <input class="input" id="title" type="text" required/>
-                    <label for="author">Author</label>
-                    <input class="input" id="author" type="text" required />
-                    <label for="pages">Page Count</label>
-                    <input class="input" id="pages" type="text" required/>
-                    <label for="read">Read Status</label>
-                    <input type="checkbox" id="read" name="read" checked>
-                    <button class="btn" id="submitBtn">Submit</button>
-                    <button class="modal-close" id="cancelBtn">Cancel</button>
-                  </form>
+                    <h3>Add a book</h3>
+                    <!-- <div> -->
+                        <label for="name">Book Name</label>
+                        <input class="input" id="title" type="text" required/>
+                    <!-- </div>
+                    <div>     -->
+                        <label for="author">Author</label>
+                        <input class="input" id="author" type="text" required />
+                    <!-- </div>  
+                    <div> -->
+                        <label for="pages">Page Count</label>
+                        <input class="input" id="pages" type="text" required/>
+                    <!-- </div> -->
+                    <!-- <div>    -->
+                        <label for="read">Read Status</label>
+                        <input type="checkbox" id="read" name="read" checked>
+                    <!-- </div>   -->
+                    <div class="formBtns">    
+                        <button class="btn" id="submitBtn">Submit</button>
+                        <button class="modal-close" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
             </div>
           </div>
 

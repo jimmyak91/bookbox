@@ -187,6 +187,20 @@ body {
   color: var(--colour-primarywhite);
 }
 
+.no-books {
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* text-align: center; */
+}
+
+.no-books h3 {
+  color: var(--colour-cadetgrey);
+  font-size: 4rem;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: absolute; /* Stay in place */
@@ -198,16 +212,97 @@ body {
     width: 500px;
     transform: translate(-50%, -50%);
     padding: 3rem;
-
+    z-index: 9999;
       
 }
 /* Modal Content/Box */
 .formPopup {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    background-color: var(--colour-primarywhite);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--colour-primarywhite);
+    border-bottom: 27px solid #FAF9FD;
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formContainer h3 {
+    color: var(--colour-riflegreen);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .input {
+    font-size: 1rem;
+    font-size: Max(1rem, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: var(--colour-offwhite);
+    border: 1px solid var(--colour-cadetgrey);
+    border-radius: 4px;
+    transition: 180ms box-shadow ease-in-out;
+  }
+  
+  .input:focus {
+    border-color: var(--colour-riflegreen);
+    box-shadow: 0 0 0 2px var(--colour-riflegreen);
+    outline: 2px solid transparent;
+  }
+  
+  label {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--colour-nickel);
+    margin: 2rem 0 1rem 0;
+  }
+  
+  .input+label {
+    margin-top: 2rem;
+  }
+
+  .formBtns {
+    margin: 2rem 0 1rem 0;
+  }
+
+  .formBtns button {
+    display: inline-block;
+    border: 1px solid var(--colour-offwhite);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--colour-riflegreen);
+    color: var(--colour-primarywhite);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+      transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .formBtns button:hover {
+    color: var(--colour-riflegreen);
+    background: none;
+    border: 1px solid var(--colour-riflegreen);
   }
 
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -236,45 +331,3 @@ body {
     div.main {margin-left: 0;}
   }
 
-
-
-
-/* --------------
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
-  }
-  
-  /* The popup form - hidden by default */
-  /* .form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  } */
-  
-  /* Add styles to the form container */
- .addBookPopup {
-     display: flex;
-     flex-direction: column;
-     /* background-color: var(--colour-primarywhite); */
-     width: 500px;
-     justify-content: center;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     border-radius: 15px;
-     padding: 30px;
- }

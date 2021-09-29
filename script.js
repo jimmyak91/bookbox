@@ -25,10 +25,15 @@ const addBook = () => {
     pages = pagesInput.value;
     read = readInput.checked;
     id = this.id;
+
+    if (title === "" || author === "" || pages === "") {
+      return;
+    }
   
     let newBook = new book(title, author, pages, read);
   
     myLibrary.push(newBook);
+    noBooksAdded();
     updateBooks();
     formReset();
     saveLibraryToLocalStorage(myLibrary);
@@ -79,6 +84,7 @@ const createBook = (item) => {
 
     removeBtn.addEventListener('click', () => {
         myLibrary.splice(myLibrary.indexOf(item), 1);
+        noBooksAdded();
         updateBooks();
         saveLibraryToLocalStorage(myLibrary);
      });
@@ -163,8 +169,27 @@ function unhover(element) {
   element.setAttribute('src', 'GitHub-Mark-Light-32px.png');
 }
 
+const noBooksAdded = () => {
+  const noBooksDiv = document.querySelector('.no-books');
+  if (myLibrary.length === 0) {
+    noBooksDiv.style.display = 'flex';
+  } else {
+    noBooksDiv.style.display = 'none';
+  }
+};
+
+
 window.onload = function() {
 
   myLibrary = JSON.parse(localStorage.library);
+  if (myLibrary === null) {
+    myLibrary = [];
+  }
+  else {
+    noBooksAdded();
+    updateBooks();
+  }
   updateBooks();
 }
+
+
