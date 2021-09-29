@@ -1,2 +1,2 @@
 # bookbox
-https://odin-library.vercel.app/index.html#
+https://jimmyak91.github.io/bookbox/
